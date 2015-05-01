@@ -47,16 +47,16 @@ $( document ).ready(function() {
 ```
 
 * format :
-H    Hours (0 to 23)
-HH   Hours (00 to 23) (two digits)
-h    English hour (0 to 12)
-hh   English hour (00 to 12) (two digits)
-a    Ante or Post Meridiem (am or pm)
-A    Ante or Post Meridiem (AM or PM)
-mm   Minutes (0 to 59)
-m    Minutes (00 to 59)(two digits)
-s    Seconds (0 to 59)
-ss   Seconds (00 to 59) (two digits)
+* H    Hours (0 to 23)
+* HH   Hours (00 to 23) (two digits)
+* h    English hour (0 to 12)
+* hh   English hour (00 to 12) (two digits)
+* a    Ante or Post Meridiem (am or pm)
+* A    Ante or Post Meridiem (AM or PM)
+* mm   Minutes (0 to 59)
+* m    Minutes (00 to 59)(two digits)
+* s    Seconds (0 to 59)
+* ss   Seconds (00 to 59) (two digits)
 
 default = HH:mm:ss
 
