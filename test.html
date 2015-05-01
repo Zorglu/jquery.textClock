@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jquery plugin "textClock"</title>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="js/jquery.textClock.min.js"></script>
+</head>
+<body>
+	<h1>textClock</h1>
+	<div>
+		<p>
+			It's <span class="clock"></span> o'clock !<br />
+			<span class="clock"></span> is the curent local time.<br />
+			Show only hours and minutes <span class="clock" data-format="hh:mm A"></span><br />
+			GMT/UTC time is <span class="clock" data-format="hh:mm:ss a" data-offset="0"></span>
+			<br />
+			Local time is <span class="clock" data-format="HH:mm:ss"></span><br />
+			Current time at Paris is <span class="clock" data-format="HH:mm:ss" data-offset="7200"></span> from local time<br />
+			Time at New York is (Summer Time) from local time<span class="clock" data-format="HH:mm:ss" data-offset="-14400"></span>&nbsp;else
+			<span class="clock" data-format="HH:mm:ss" data-offset="-18000"></span><br />
+			Time at Tokyo from server
+			<span class="clock" data-format="HH:mm:ss" data-timezone="Japan"></span><br />
+			Time at Paris from server
+			<span class="clock" data-format="HH:mm:ss" data-timezone="Europe/Paris"></span><br />
+		</p>
+	</div>
+<script>
+$( document ).ready(function() {
+	$(".clock").textClock({format:"hh:mm:ss a"});
+});
+</script>
+
+</body>
+</html>

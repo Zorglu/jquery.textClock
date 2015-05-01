@@ -46,7 +46,7 @@ $( document ).ready(function() {
 
 ```
 
-+format :
+* format :
 H    Hours (0 to 23)
 HH   Hours (00 to 23) (two digits)
 h    English hour (0 to 12)
@@ -60,7 +60,7 @@ ss   Seconds (00 to 59) (two digits)
 
 default = HH:mm:ss
 
-+timezone :
+* timezone :
 timezone name. See http://json-time.appspot.com/timezones.json for see timezones
 NOTE that this parameter overrides "offset" parameter if present
 
@@ -69,7 +69,7 @@ numeric signed in minutes to add an offset to the local time.
 
 default = 0
 
-+cbReady :
+* cbReady :
 Callback function called when the plugin is initialized
 
 default : false
