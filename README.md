@@ -66,27 +66,24 @@ default = HH:mm:ss
 * *timezone* :
 timezone name. [http://json-time.appspot.com/timezones.json](http://json-time.appspot.com/timezones.json) for see timezones
 **NOTE** that this parameter overrides "offset" parameter if present
+`default = false`
 
 * *offset* :
 numeric signed in minutes to add an offset to the local time.
-
-default = 0
+`default = 0`
 
 * *cbDateTime*
 Callback function called every second to bring the current time
-
-default : false
+`default = false`
 
 * *cbReady* :
 Callback function called when the plugin is initialized
-
-default : false
+`default = false`
 
 * *autosync* :
 Synchronize time at the frequency set in minutes
 autosync is not used if the timezone parameter is not set
-
-default : false
+`default : false`
 
 # Data properties
 All parameters can also be transmitted by adding properties "data" to the DOM element
