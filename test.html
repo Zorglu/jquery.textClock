@@ -10,26 +10,52 @@
 </head>
 <body>
 	<h1>textClock</h1>
+	<p>
+		JQuery plugin by <a href="https://github.com/Zorglu">Zorglu</a>
+	</p>
 	<div>
 		<p>
-			It's <span class="clock"></span> o'clock !<br />
+			It's <span id="clock"></span> o'clock !<br />
 			<span class="clock"></span> is the curent local time.<br />
 			Show only hours and minutes <span class="clock" data-format="hh:mm A"></span><br />
 			GMT/UTC time is <span class="clock" data-format="hh:mm:ss a" data-offset="0"></span>
 			<br />
 			Local time is <span class="clock" data-format="HH:mm:ss"></span><br />
 			Current time at Paris is <span class="clock" data-format="HH:mm:ss" data-offset="7200"></span> from local time<br />
-			Time at New York is (Summer Time) from local time<span class="clock" data-format="HH:mm:ss" data-offset="-14400"></span>&nbsp;else
+			Time at New York is (Summer Time) from local time <span class="clock" data-format="HH:mm:ss" data-offset="-14400"></span>&nbsp;else
 			<span class="clock" data-format="HH:mm:ss" data-offset="-18000"></span><br />
 			Time at Tokyo from server
 			<span class="clock" data-format="HH:mm:ss" data-timezone="Japan"></span><br />
 			Time at Paris from server
-			<span class="clock" data-format="HH:mm:ss" data-timezone="Europe/Paris"></span><br />
+			<span class="clock" data-format="HH:mm:ss" data-timezone="Europe/Paris" data-autosync="60"></span><br />
 		</p>
 	</div>
+	<div>
+		<button id="btn-gettime">Get Time</button>
+	</div>
 <script>
+function clockReady(){
+	console.log("Clock plugin is ready");
+}
+
+function clockDateTime(date_time){
+	console.log(date_time);
+}
+
 $( document ).ready(function() {
+
+	var clock = $("#clock").textClock({
+		format:"hh:mm:ss a",
+		cbReady: clockReady,
+		cbDateTime: clockDateTime
+	});
+
 	$(".clock").textClock({format:"hh:mm:ss a"});
+
+	$("#btn-gettime").click(function(){
+		$(this).html("Get Time : " + clock.data('textClock').getTime());
+	});
+
 });
 </script>
 

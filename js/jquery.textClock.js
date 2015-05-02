@@ -5,7 +5,9 @@
             template:"HH:mm:ss",
             offset: false,
             timezone: false,
-		    cbReady: false
+            autosync: false,
+		    cbReady: false,
+            cbDateTime: false
 		};
 
         var plugin = this;
@@ -30,11 +32,22 @@
                 plugin.settings.timezone = data_timezone;
             }
 
+            var data_autosync = plugin.$container.attr("data-autosync");
+            if( typeof data_autosync !== "undefined"){
+                plugin.settings.autosync = data_autosync;
+            }
+
             plugin.getDate();
 
 			plugin.timer = setInterval(function(){
 				plugin.run();
 			}, 1000);
+
+            if( plugin.settings.autosync && plugin.settings.timezone ){
+                plugin.timer = setInterval(function(){
+                    plugin.getDate();
+                }, plugin.settings.autosync * 60000);
+            }
 
 			if( plugin.settings.cbReady ){
 				plugin.settings.cbReady();
@@ -64,6 +77,7 @@
 
             plugin.date = new Date();
             if( plugin.settings.timezone ){
+                plugin.$container.html("---");
                 getTime(plugin.settings.timezone, function(time){
                      plugin.date = time;
                      plugin.run();
@@ -113,6 +127,15 @@
             s = s.replace("A", englishAmPm(plugin.date.getHours(), true));
 
             plugin.$container.html(s);
+
+            if( plugin.settings.cbDateTime ){
+                plugin.settings.cbDateTime(plugin.date);
+            }
+
+        };
+
+        plugin.getTime = function(){
+            return plugin.date;
         };
 
         plugin.init();

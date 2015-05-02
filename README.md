@@ -1,8 +1,12 @@
-# jquery.textClock
-Jquery plugin to show time easily on your site
+jquery.textClock
+=======
+
+# JQuery plugin to show time easily on your site
+
+# JQuery plugin by [Zorglu](https://github.com/Zorglu)
 
 ## Installation
-In the <head> block of the page
+In the "head" block of the page
 ```html
 <head>
 <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -11,7 +15,7 @@ In the <head> block of the page
 ```
 
 ## Usage
-In the <body> block of this HTML page
+In the "body" block of this HTML page
 
 ```html
 <body>
@@ -61,25 +65,51 @@ $( document ).ready(function() {
 default = HH:mm:ss
 
 * timezone :
-timezone name. See http://json-time.appspot.com/timezones.json for see timezones
-NOTE that this parameter overrides "offset" parameter if present
+timezone name. [http://json-time.appspot.com/timezones.json](http://json-time.appspot.com/timezones.json) for see timezones
+**NOTE** that this parameter overrides "offset" parameter if present
 
 +offset :
 numeric signed in minutes to add an offset to the local time.
 
 default = 0
 
+* cbDateTime
+Callback function called every second to bring the current time
+
+default : false
+
 * cbReady :
 Callback function called when the plugin is initialized
 
 default : false
 
+* autosync :
+Synchronize time at the frequency set in minutes
+autosync is not used if the timezone parameter is not present
+
+default : false
+
 # Data properties
 All parameters can also be transmitted by adding properties "data" to the DOM element
-Ex to show US Eastern local time in 24h format. Show just hours ans minutes
+Ex to show US Eastern local time in 24h format. Show just hours and minutes
 ```html
 <span class="clock" data-format="HH:mm" data-timezone="US/Eastern"></span>
 ```
 
-IMPORTANT :
+**IMPORTANT** :
 DOM data-parameter will override the options passed to the plugin
+
+# Functions
+
+* getTime()
+Call this function to get current time of plugin.
+```html
+It's <span id="clock"></span> o'clock !<br />
+<button id="btn-gettime">Get Time</button>
+<script>
+	var clock = $("#clock").textClock();
+	$("#btn-gettime").click(function(){
+		alert(clock.data('textClock').getTime());
+	});
+</script>
+```
