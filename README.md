@@ -59,34 +59,33 @@ $( document ).ready(function() {
 * mm   Minutes (0 to 59)
 * m    Minutes (00 to 59)(two digits)
 * s    Seconds (0 to 59)
-* ss   Seconds (00 to 59) (two digits)
-
-default = HH:mm:ss
+* ss   Seconds (00 to 59) (two digits)  
+`default = HH:mm:ss`
 
 * *timezone* :
-timezone name. [http://json-time.appspot.com/timezones.json](http://json-time.appspot.com/timezones.json) for see timezones
-**NOTE** that this parameter overrides "offset" parameter if present
+timezone name. [http://json-time.appspot.com/timezones.json](http://json-time.appspot.com/timezones.json) for see timezones  
+**NOTE** that this parameter overrides "offset" parameter if present  
 `default = false`
 
 * *offset* :
-numeric signed in minutes to add an offset to the local time.
+numeric signed in minutes to add an offset to the local time.  
 `default = 0`
 
 * *cbDateTime*
-Callback function called every second to bring the current time
+Callback function called every second to bring the current time  
 `default = false`
 
 * *cbReady* :
-Callback function called when the plugin is initialized
+Callback function called when the plugin is initialized  
 `default = false`
 
 * *autosync* :
-Synchronize time at the frequency set in minutes
-autosync is not used if the timezone parameter is not set
+Synchronize time at the frequency set in minutes  
+autosync is not used if the timezone parameter is not set.  
 `default : false`
 
 # Data properties
-All parameters can also be transmitted by adding properties "data" to the DOM element
+All parameters can also be transmitted by adding properties "data" to the DOM element.  
 Ex to show US Eastern local time in 24h format. Show just hours and minutes
 ```html
 <span class="clock" data-format="HH:mm" data-timezone="US/Eastern"></span>
