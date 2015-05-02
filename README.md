@@ -1,9 +1,8 @@
 jquery.textClock
 =======
+JQuery plugin to show time easily on your site
 
-# JQuery plugin to show time easily on your site
-
-# JQuery plugin by [Zorglu](https://github.com/Zorglu)
+#### JQuery plugin by [Zorglu](https://github.com/Zorglu)
 
 ## Installation
 In the "head" block of the page
@@ -50,7 +49,7 @@ $( document ).ready(function() {
 
 ```
 
-* format :
+* *format* :
 * H    Hours (0 to 23)
 * HH   Hours (00 to 23) (two digits)
 * h    English hour (0 to 12)
@@ -64,28 +63,28 @@ $( document ).ready(function() {
 
 default = HH:mm:ss
 
-* timezone :
+* *timezone* :
 timezone name. [http://json-time.appspot.com/timezones.json](http://json-time.appspot.com/timezones.json) for see timezones
 **NOTE** that this parameter overrides "offset" parameter if present
 
-+offset :
+* *offset* :
 numeric signed in minutes to add an offset to the local time.
 
 default = 0
 
-* cbDateTime
+* *cbDateTime*
 Callback function called every second to bring the current time
 
 default : false
 
-* cbReady :
+* *cbReady* :
 Callback function called when the plugin is initialized
 
 default : false
 
-* autosync :
+* *autosync* :
 Synchronize time at the frequency set in minutes
-autosync is not used if the timezone parameter is not present
+autosync is not used if the timezone parameter is not set
 
 default : false
 
@@ -101,7 +100,7 @@ DOM data-parameter will override the options passed to the plugin
 
 # Functions
 
-* getTime()
+* *getTime()*
 Call this function to get current time of plugin.
 ```html
 It's <span id="clock"></span> o'clock !<br />
